@@ -7,9 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Batman Trivia</title>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
+
+
     <div class="banner">
 
 
@@ -23,8 +27,14 @@
             </h2>
         </div>
     </div>
+    <main role="main" class="inner cover">
+        <p class="lead btn btn-lg btn-warning" id="game-start">Start</p>
+        <div class="col-lg-4 col-lg-offset-4 text-center">
+            <p id="countdown">Time Remaining:<span id="timer"></span></p>
+        </div>
+    </main>
     <br>
-    <div valign="middle"
+    <div valign="middle" class="trivques"
         style="width:600px; margin: 0 auto; background-color: gold; padding: 25px; font-size: 24px; text-align: center;">
         <p class="quest">1. The first Batman story, "The Case of the Chemical Syndicate," was published in what year?
         </p>
@@ -94,8 +104,18 @@
                 <input type="radio" name="optradio" class="optradio" value="correct"> The Dark Knight Returns
             </label>
         </form>
-    </div>
+        <div>
+            <p class="lead btn btn-lg btn-dark" id="game-finish">Done
+            </p>
+        </div>
 
+    </div>
+    <div class="results">
+        <p class="resultNumbers" id="summary">You Finished!</p>
+        <p class="resultNumbers" id="correctScore">Correct Answers:</p>
+        <p class="resultNumbers" id="wrongScore"></p>
+        <p class="resultNumbers" id="unanswered"></p>
+    </div>
     <!--jQuery and JavaScript file links-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>

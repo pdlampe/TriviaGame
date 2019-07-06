@@ -4,28 +4,23 @@ $(document).ready(function () {
     $('.trivques').hide();
     $('.results').hide();
 
-    // Declare Variables
+    var wrongAns = 0;
+    var noAnswer = 0;
     var numsec = 90;
     var intervalSet;
     var correctAns = 0;
-    var wrongAns = 0;
-    var unanswered = 0;
 
-    //ALL FUNCTIONS
 
-    // function to show questions
-    function showQuestions() {
+    function displayQuest() {
         $('#countdown').show();
         $('.trivques').show();
-        $('#game-finish').show();
+        $('#gamefin').show();
     }
 
-    // function for timer
-    function countdownTimer() {
+    function countdownClock() {
         intervalSet = setInterval(decrement, 1000);
     }
 
-    // function to decrement timer
     function decrement() {
         numsec--;
         $('#timer').html(" " + numsec + " " + "seconds");
@@ -39,48 +34,39 @@ $(document).ready(function () {
         }
     }
 
-    //function to clear timer
     function stop() {
         clearInterval(intervalSet);
     }
 
-    //function to hide text after questions are answered or timer out
     function hide() {
         $('#countdown').hide();
         $('.trivques').hide();
-        $('#game-finish').hide();
+        $('#gamefin').hide();
     }
 
-    // function to display summary of game
     function displaySummary() {
         $('.results').show();
-        unanswered = (8 - (correctAns + wrongAns));
+        noAnswer = (8 - (correctAns + wrongAns));
         $('#correctScore').text("Correct Answers:" + " " + correctAns);
         $('#wrongScore').text("Wrong Answers:" + " " + wrongAns);
-        $('#unanswered').text("Unanswered:" + " " + unanswered);
+        $('#noAnswer').text("Unanswered:" + " " + noAnswer);
     }
 
-
-    //Clicking Start Button
-    $('#game-start').on('click', function () {
-        $('#game-start').hide();
-        showQuestions();
-        countdownTimer();
+    $('#gamestrt').on('click', function () {
+        $('#gamestrt').hide();
+        displayQuest();
+        countdownClock();
     });
 
-    //Clicking Done Button
-    $('#game-finish').on('click', function () {
-        $('#game-start').hide();
+    $('#gamefin').on('click', function () {
+        $('#gamestrt').hide();
         hide();
         displaySummary();
     });
 
-    //Clicking Radio button
     $('input[type=radio]').on('change', function () {
         correctAns = $('input[value=correct]:checked').length;
         wrongAns = $('input[value=wrong]:checked').length;
-        unanswered = (8 - (correctAns + wrongAns));
+        noAnswer = (8 - (correctAns + wrongAns));
     });
-
-    // Last closing bracket
 });

@@ -21,14 +21,14 @@
             style="margin-right: 80px; float: right;">
         <br>
         <div style="text-align: center">
-            <h2 style="margin-left: 300px;">
+            <h2 style="margin-left: 300px; font-size: 70px;">
                 Batman<br>
                 Trivia
             </h2>
         </div>
     </div>
     <main role="main" class="inner cover">
-        <p class="lead btn btn-lg btn-warning" id="game-start">Start</p>
+        <p class="lead btn btn-lg btn-warning" id="gamestrt">Start</p>
         <div class="col-lg-4 col-lg-offset-4 text-center">
             <p id="countdown">Time Remaining:<span id="timer"></span></p>
         </div>
@@ -104,17 +104,59 @@
                 <input type="radio" name="optradio" class="optradio" value="correct"> The Dark Knight Returns
             </label>
         </form>
+        <p class="quest">6. Batman, a.k.a. Bruce Wayne, resides on the outskirts of what fictional city?
+        </p>
+        <form class="question">
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="wrong"> Metropolis
+            </label>
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="correct"> Gotham City
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="wrong"> Keystone City
+            </label>
+        </form>
+        <p class="quest">7. In Batman: The Animated Series, airing from 1992 to 1995, who was the voice of the Joker?
+        </p>
+        <form class="question">
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="correct"> Mark Hamill
+            </label>
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="wrong"> Zach Galifianakis
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="wrong"> Jack Nicholson
+            </label>
+        </form>
+        <p class="quest">8. What is Selina Kyle's alter ego?
+        </p>
+        <form class="question">
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="wrong"> Batwoman
+            </label>
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="wrong"> Batgirl
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="optradio" class="optradio" value="correct"> Catwoman
+            </label>
+        </form>
         <div>
-            <p class="lead btn btn-lg btn-dark" id="game-finish">Done
+            <p class="lead btn btn-lg btn-dark" id="gamefin">Done
             </p>
         </div>
 
     </div>
-    <div class="results">
+    <div class="results" style="padding-left: 25px;">
         <p class="resultNumbers" id="summary">You Finished!</p>
         <p class="resultNumbers" id="correctScore">Correct Answers:</p>
         <p class="resultNumbers" id="wrongScore"></p>
-        <p class="resultNumbers" id="unanswered"></p>
+        <p class="resultNumbers" id="noAnswer"></p>
     </div>
     <!--jQuery and JavaScript file links-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
